@@ -9,7 +9,10 @@ restService.use(bodyParser.json());
 restService.post('/webhook', (req, res) => {
 
     console.log('hook request');
-
+	
+	let action = req.body.result.action;
+	console.log(action);
+	
     return res.json({
         speech: "This is speech",
         displayText: "This is speech",
