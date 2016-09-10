@@ -21,7 +21,8 @@ restService.post('/webhook', (req, res) => {
                 text: "Slack message"
             },
             telegram: {
-                text: "Telegram message"
+                text: "Telegram message",
+				parse_mode: "bold"
             }
         },
         source: 'apiai-integrations'
