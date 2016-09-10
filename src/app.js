@@ -25,7 +25,7 @@ restService.post('/webhook', (req, res) => {
             },
             telegram: {
                 text: "Telegram message",
-				parse_mode: "bold"
+				request_contact: "True"
             }
         },
         source: 'apiai-integrations'
