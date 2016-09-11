@@ -12,7 +12,7 @@ restService.post('/webhook', (req, res) => {
 	
 	let action = req.body.result.action;
 	console.log(action);
-	//let text_resp = '';
+	let text_resp = '';
 	
 	if (action == 'bot_introduction'){
 		text_resp = 'Привет, я хайв бот, могу помочь тебе с учебой. Скажи что ты умеешь и по каким предметам тебе требуется помощь.'
@@ -31,7 +31,7 @@ restService.post('/webhook', (req, res) => {
                 text: "Slack message"
             },
             telegram: {
-                text: 'aaaa'
+                text: text_resp
             }
         },
         source: 'apiai-integrations'
