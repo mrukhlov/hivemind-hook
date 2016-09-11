@@ -13,8 +13,8 @@ restService.post('/webhook', (req, res) => {
 	let action = req.body.result.action;
 	console.log(action);
 	
-	if (bot_introduction == 'bot_introduction'){
-		text_resp = 'Привет, я хайв бот, могу помочь тебе с учебой.'
+	if (action == 'bot_introduction'){
+		text_resp = 'Привет, я хайв бот, могу помочь тебе с учебой. Скажи что ты умеешь и по каким предметам тебе требуется помощь.'
 	} else {
 		text_resp = 'telegram message'
 	}
