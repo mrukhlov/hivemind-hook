@@ -9,6 +9,15 @@ restService.use(bodyParser.json());
 restService.post('/webhook', (req, res) => {
 
     console.log('hook request');
+	
+	let action = req.body.result.action;
+	let text_resp = 'telegram message'
+		
+	if (action == 'bot_introduction'){
+		text_resp = "Привет, я хайв бот, могу помочь *тебе* с учебой. Скажи что ты 'умеешь' и по каким предметам *тебе* требуется помощь."
+	} else {
+		text_resp = '@vbifonix'
+	}
 
     return res.json({
         speech: "This is speech",
@@ -21,7 +30,7 @@ restService.post('/webhook', (req, res) => {
                 text: "Slack message"
             },
             telegram: {
-                text: "aaaa"
+                text: text_resp
             }
         },
         source: 'apiai-integrations'
