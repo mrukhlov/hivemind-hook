@@ -13,6 +13,12 @@ restService.post('/webhook', (req, res) => {
 	let action = req.body.result.action;
 	console.log(action);
 	
+	if (bot_introduction == 'bot_introduction'){
+		text_resp = 'Привет, я хайв бот, могу помочь тебе с учебой.'
+	} else {
+		text_resp = 'telegram message'
+	}
+	
     return res.json({
         speech: "This is speech",
         displayText: "This is speech",
@@ -24,7 +30,7 @@ restService.post('/webhook', (req, res) => {
                 text: "Slack message"
             },
             telegram: {
-                text: "Telegram message",
+                text: text_resp,
 				request_contact: "True"
             }
         },
