@@ -11,7 +11,7 @@ restService.post('/webhook', (req, res) => {
     console.log('hook request');
 	
 	let action = req.body.result.action;
-	console.log(action);
+	console.log(action == 'bot_introduction');
 	let text_resp = '';
 	
 	if (action == 'bot_introduction'){
