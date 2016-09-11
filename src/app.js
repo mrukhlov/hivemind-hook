@@ -31,9 +31,6 @@ restService.post('/webhook', (req, res) => {
             },
             telegram: {
                 text: text_resp,
-				request_contact: "True",
-				phone_number: "+7 (903) 734-62-60",
-				first_name: "Max"
             }
         },
         source: 'apiai-integrations'
