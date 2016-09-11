@@ -14,9 +14,9 @@ restService.post('/webhook', (req, res) => {
 	console.log(action);
 	
 	if (action == 'bot_introduction'){
-		text_resp = 'Привет, я хайв бот, могу помочь тебе с учебой. Скажи что ты умеешь и по каким предметам тебе требуется помощь.'
+		text_resp = 'Привет, я хайв бот, могу помочь тебе с учебой. Скажи что ты умеешь и по каким предметам тебе требуется помощь.';
 	} else {
-		text_resp = 'telegram message'
+		text_resp = 'telegram message';
 	}
 	
     return res.json({
