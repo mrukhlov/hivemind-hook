@@ -14,11 +14,13 @@ restService.post('/webhook', (req, res) => {
 	console.log(action);
 	let text_resp = '';
 	
-	if (action == 'bot_introduction'){
+	text_resp = 'Привет, я хайв бот, могу помочь тебе с учебой. Скажи что ты умеешь и по каким предметам тебе требуется помощь.'
+	
+	/*if (action == 'bot_introduction'){
 		text_resp = 'Привет, я хайв бот, могу помочь тебе с учебой. Скажи что ты умеешь и по каким предметам тебе требуется помощь.'
 	} else {
 		text_resp = 'telegram message'
-	}
+	}*/
 	
     return res.json({
         speech: "This is speech",
