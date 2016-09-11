@@ -11,12 +11,12 @@ restService.post('/webhook', (req, res) => {
     console.log('hook request');
 	
 	let action = req.body.result.action;
-	let text_resp = 'telegram message'
+	let text_resp = ''
 		
 	if (action == 'bot_introduction'){
-		text_resp = "Привет, я хайв бот, могу помочь *тебе* с учебой. Скажи что ты 'умеешь' и по каким предметам *тебе* требуется помощь."
+		text_resp = "Привет, я хайв бот, могу помочь тебе с учебой. Скажи что ты умеешь и по каким предметам тебе требуется помощь."
 	} else {
-		text_resp = '@vbifonix'
+		text_resp = 'telegram message'
 	}
 
     return res.json({
