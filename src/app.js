@@ -27,8 +27,8 @@ restService.post('/webhook', (req, res) => {
 	}
 
     return res.json({
-        speech: "This is speech",
-        displayText: "This is speech",
+        speech: "Defult webhook speech",
+        displayText: "Defult webhook speech",
         data: {
             facebook: {
                 text: "Facebook message"
