@@ -3,6 +3,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const restService = express();
+restService.use(bodyParser.json());
+
 restService.post('/webhook', (req, res) => {
 	
 	require('console-stamp')(console, 'yyyy.mm.dd HH:MM:ss.l');
@@ -13,15 +16,12 @@ restService.post('/webhook', (req, res) => {
 	let text_resp = ''
 		
 	if (action == 'bot_introduction'){
-<<<<<<< HEAD
 		text_resp = "Привет, меня зовут Хайвмайнд бот. Я могу помочь тебе найти человека, с которым ты можешь своими поделиться знаниями. Начнем?"
-=======
-		text_resp = "Привет, меня зовут Хайвмайнд бот. Я могу помочь тебе найти человека, с которым ты можешь своими поделиться знаниями."
->>>>>>> parent of b0d6d4f... hook upd
-	} else if (action == 'step_1') {
-		text_resp = 'Я вижу, что ты зарегистрирован на "moyuniver.ru". Ты хорош в этих предметах: '+skillsList+', но слаб в следующих: '+skillsList+'. Начинаем искать?'
-	} else if (action == 'step_2') {
-		text_resp = wishList
+	} else if action == 'step_1' {
+		text_resp = 'Я вижу, что ты зарегистрирован на "Моунивер.ру". Ты хорош в этих предметах: "Английский язык", "Программирование", "История", но слаб в этих: "Физика", "Химия", "Экономика". Начинаем искать?'
+	} else if action == 'step_2' {
+		text_resp = 'Вот я нашел несколько человек, которые могли бы помочь тебе с этими предметами.\nРухлов Максим @mrukhlov\nвладеет предметом: "Физика",\nне владеет предметом "Английский язык"\Астахова Анна @ostanna\nвладеет предметом: "Экономика",\nне владеет предметом "Программирование"\nАлександрович Юлия @july666\nвладеет предметом: "Химия",\nне владеет предметом "Программирование"'
+
 	} else {
 		text_resp = 'telegram message'
 	}
